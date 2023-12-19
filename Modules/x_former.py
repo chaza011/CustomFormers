@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .cross-attention import MultiHeadAttBlockX
+from .cross_attention import MultiHeadAttBlockX
 
 #X-Former block
 class X_Former(nn.Module):
