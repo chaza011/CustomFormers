@@ -4,6 +4,6 @@ If you want to build your own transformers from scratch you can use this reposit
 
 # Install
 ```
-pip install git+https://github.com/chaza011/Transformers.git
+pip install git+https://github.com/chaza011/CustomFormers.git
 ```
 
