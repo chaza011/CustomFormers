@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .self-attention import MultiHeadAttBlockS
+from .self_attention import MultiHeadAttBlockS
 
 class Transformer(nn.Module):
     def __init__(self, d_model, d_ff, num_heads):
