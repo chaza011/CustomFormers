@@ -4,7 +4,7 @@ setup(
     name='CustomFormers',
     version='0.1',
     url = 'https://github.com/chaza011/CustomFormers',
-    packages=['Modules'],
+    packages=find_packages(),
     install_requires=[
         'torch>=1.13',
     ]
