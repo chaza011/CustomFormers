@@ -50,11 +50,8 @@ class MultiHeadAttBlockX(nn.Module):
         #Apply each attention head to its segment
         head_outputs = attention(Q, K, V, head_dim)
 
-        #Concatenate the outputs
-        concatenated = torch.cat(head_outputs, dim=-1)
-
         #Reshape back to original dimension
-        concatenated = concatenated.transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
+        concatenated = head_outputs.transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
         
         #Send through output layer and Apply LayerNorm and Res Connection
         output_attention = self.LN_post(self.Dropout(self.output_linear(concatenated) + x))
