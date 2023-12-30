@@ -49,7 +49,7 @@ class MultiHeadAttBlockX(nn.Module):
         Q, K, V = [matrix.transpose(1, 2) for matrix in [Q, K, V]]
 
         #Apply each attention head to its segment
-        head_outputs = attention(Q, K, V, head_dim)
+        head_outputs = attention(Q, K, V, self.head_dim)
 
         #Reshape back to original dimension
         concatenated = head_outputs.transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
