@@ -1,11 +1,12 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import math
 
 #Attention Mechanism
 def attention(q, k, v, d_k):
     
-    attention_scores = torch.matmul(q, k.transpose(-2, -1)) / torch.sqrt(d_k)
+    attention_scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k)
     
     attention_weights = F.softmax(attention_scores, dim=-1)
     
